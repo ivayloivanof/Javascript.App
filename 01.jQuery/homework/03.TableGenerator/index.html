@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Generator</title>
+    <script src="../js/jquery.js"></script>
+    <style>
+        table {
+            border: 1px solid black;
+        }
+        td {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <p>This is generated table:</p>
+</div>
+
+<script>
+    $(document).ready(function() {
+        var input = [
+            {"manufacturer":"BMW","model":"E92 320i","year":2011,"price":50000,"class":"Family"},
+            {"manufacturer":"Porsche","model":"Panamera","year":2012,"price":100000,"class":"Sport"},
+            {"manufacturer":"Peugeot","model":"305","year":1978,"price":1000,"class":"Family"}
+        ];
+
+        //Crate table html
+        var table = $("<table id='DynamicTable'></table>").appendTo("#wrapper");
+
+        //Create table header row
+        var rowHeader = $("<tr></tr>").appendTo(table);
+        $("<td width=\'100\'></td>").text("Manufacturer").appendTo(rowHeader);
+        $("<td width=\'100\'></td").text("Model").appendTo(rowHeader);
+        $("<td width=\'100\'></td>").text("Year").appendTo(rowHeader);
+        $("<td width=\'100\'></td>").text("Price").appendTo(rowHeader);
+        $("<td width=\'100\'></td>").text("Class").appendTo(rowHeader);
+        
+        input.forEach(function(row) {
+            var rowData = $("<tr></tr>").appendTo(table);
+            $("<td></td>").text(row.manufacturer).appendTo(rowData);
+            $("<td></td>").text(row.model).appendTo(rowData);
+            $("<td></td>").text(row.year).appendTo(rowData);
+            $("<td></td>").text(row.price).appendTo(rowData);
+            $("<td></td>").text(row.class).appendTo(rowData);
+        });
+
+    });
+</script>
+</body>
+</html>

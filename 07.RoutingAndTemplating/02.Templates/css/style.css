@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+#wrapper {
+    width: 50%;
+    margin: 0 auto;
+}
+
+thead {
+    background-color: silver;
+}
+
+td {
+    width: 220px;
+    height: 25px;
+    line-height: 25px;
+}
